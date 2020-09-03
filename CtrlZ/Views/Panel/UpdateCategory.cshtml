@@ -1,0 +1,21 @@
+﻿@model DataLayer.Entities.Category
+
+@{
+    ViewData["Title"] = "UpdateCategory";
+    Layout = "~/Views/Shared/_PanelLayout.cshtml";
+}
+
+<div>
+    <form asp-action="UpdateCategory" >
+        @Html.HiddenFor(model => model.ParentId)
+        <div asp-validation-summary="ModelOnly" class="text-danger"> </div>
+        <div class="form-group">
+            <label asp-for="Name" class="control-label"> </label>
+            <input asp-for="Name" class="form-control" />
+            <span asp-validation-for="Name" class="text-danger"> </span>
+        </div>
+
+        <input type="submit" value="update" class="btn btn-default" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

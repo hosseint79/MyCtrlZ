@@ -1,0 +1,33 @@
+﻿@model Core.RolePermissionViewModel
+
+@{
+    ViewData["Title"] = "CreateRolePermission";
+    Layout = "~/Views/Shared/_PanelLayout.cshtml";
+}
+
+<h2>CreateRolePermission</h2>
+
+<h4>RolePermission</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="CreateRolePermission">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <select asp-for="RoleId" asp-items="@(new SelectList(ViewBag.roleid,"RoleId","RoleName"))">
+
+            </select>
+            <select asp-for="PermissionId" asp-items="@(new SelectList(ViewBag.PermissionsId,"PermissionId","PermissionName"))">
+
+            </select>
+
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

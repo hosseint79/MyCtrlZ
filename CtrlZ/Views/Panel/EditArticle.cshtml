@@ -1,0 +1,51 @@
+﻿@model DataLayer.Entities.Article
+
+@{
+    ViewData["Title"] = "EditArticle";
+    Layout = "~/Views/Shared/_PanelLayout.cshtml";
+}
+
+<h2>EditArticle</h2>
+
+<h4>Article</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="EditArticle">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            @Html.HiddenFor(model => model.ArticleId)
+            <div class="form-group">
+                <label asp-for="Text" class="control-label"></label>
+                <textarea asp-for="Text" class="form-control"></textarea>
+                <span asp-validation-for="Text" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Describtion" class="control-label"></label>
+                <textarea asp-for="Describtion" class="form-control"></textarea>
+                <span asp-validation-for="Describtion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Title" class="control-label"></label>
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ArticlePicture" class="control-label"></label>
+                <input asp-for="ArticlePicture" class="form-control" />
+                <span asp-validation-for="ArticlePicture" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <div class="checkbox">
+                    <label>
+                        <input asp-for="ShowSlide" /> @Html.DisplayNameFor(model => model.ShowSlide)
+                    </label>
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>

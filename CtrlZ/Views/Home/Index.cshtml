@@ -1,0 +1,181 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_IndexLayout.cshtml";
+}
+
+<div class="container d-block d-md-none">
+    <div class="text-center my-5">
+        <h4 class="mb-2"> ! رایگان یاد بگیرید </h4>
+        <p> محبوب ترین دوره های ما را مشاهده کنید </p>
+    </div>
+    <div class="slider-holder-md">
+        <div class="items"><img src="~/Images/full/1.jpg" alt=""></div>
+        <div class="items"><img src="~/Images/full/10.jpg" alt=""></div>
+        <div class="items"><img src="~/Images/full/12.jpg" alt=""></div>
+        <div class="items"><img src="~/Images/full/1.jpg" alt=""></div>
+        <div class="items"><img src="~/Images/full/6.jpg" alt=""></div>
+
+    </div>
+    <div class="text-center  my-5">
+        <h4> انتقادات و پیشنهادات </h4>
+        <p> سوالات و پیشنهادات خود را با ما مطرح کنید ! </p>
+    </div>
+</div>
+
+
+<div class="container my-5 d-none d-md-block">
+    <div class="text-center">
+        <h4 class="mb-2"> ! رایگان یاد بگیرید </h4>
+        <p> محبوب ترین دوره های ما را مشاهده کنید </p>
+    </div>
+    <div class="row">
+        <section class="slider">
+
+            <div class="left-holder">     <div id="left" onclick="Left()">     </div>	 </div>
+            <div class="right-holder">    <div id="right" onclick="Right()">  </div>     </div>
+
+            <div class="galery">
+
+                <div id="gal" class="circle gal">
+
+                    <div><img src="~/Images/full/1.jpg" alt=""></div>
+                    <div><img src="~/Images/full/10.jpg" alt=""></div>
+                    <div><img src="~/Images/full/12.jpg" alt=""></div>
+                    <div><img src="~/Images/full/1.jpg" alt=""></div>
+                    <div><img src="~/Images/full/6.jpg" alt=""></div>
+
+
+                </div>
+
+            </div>
+        </section>
+    </div>
+
+    <div class="text-center my-5">
+        <h4> انتقادات و پیشنهادات </h4>
+        <p> سوالات و پیشنهادات خود را با ما مطرح کنید ! </p>
+    </div>
+
+</div>
+
+<div class="jumbotron-fluid bg-secondary my-5 py-4 cust-edge">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-7 d-flex align-items-center justify-content-center ">
+                <img class="w-75 h-100" src="./Images/full/23528vvvvv34.png ">
+            </div>
+            <div class="col-12 col-md-8 col-lg-5 d-flex p-3 align-items-center justify-content-center">
+                <form class="bg-light rounded w-100 lg py-5 px-4">
+
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control form-control-lg">
+                        <div class="input-group-append">
+                            <span class="input-group-text"> : نام  </span>
+                        </div>
+                    </div>
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control form-control-lg">
+                        <div class="input-group-append">
+                            <span class="input-group-text"> : نام  </span>
+                        </div>
+                    </div>
+                    <div class="form-group mb-3 rtl">
+                        <label class="float-right">Comment:</label>
+                        <textarea type="text" class="form-control form-control-lg"></textarea>
+
+                    </div>
+                    <button class="btn btn-success d-block mx-auto mt-4 px-4"> send </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="container my-5">
+    <div class="container my-5">
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs">
+
+            <li class="nav-item">
+                <a class="nav-link active" data-toggle="tab" href="#home">هفته</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#menu1">ماه</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#menu2">سال</a>
+            </li>
+            <li class="ml-auto d-flex align-items-center px-3 text-white justify-content-center bg-header rounded"> محبوب ترین ها </li>
+        </ul>
+
+        <!-- Tab panes -->
+        <div class="tab-content">
+            <div class="tab-pane active rtl" id="home">
+                <div class="p-3 bg-white my-3 rounded cust-shadow">
+                    <div class="d-flex justify-content-start align-items-end">
+                        <img src="Images/profile-list22-shape.png" class="cust-articleitem-img ml-3 rounded" />
+                        <h6 class="my-4 mx-2">   ارسال شده توسط <strong> حسین </strong></h6>
+                    </div>
+                    <div class="p-2">
+                        <p class="text-justify"> هاست دات نت را می توان یکی از انواع هاست اشتراکی ویندوز در نظر گرفت که بهینه سازی انجام شده در آن با در نظر گرفتن المان های مهم در میزبانی سایت های نوشته شده بر اساس زبان برنامه نویسی دات نت مایکروسافت است </p>
+                    </div>
+                </div>
+                <div class="p-3 bg-white my-3 rounded cust-shadow">
+                    <div class="d-flex justify-content-start align-items-end">
+                        <img src="Images/profile-list22-shape.png" class="cust-articleitem-img ml-3 rounded" />
+                        <h6 class="my-4 mx-2">   ارسال شده توسط <strong> حسین </strong></h6>
+                    </div>
+                    <div class="p-2">
+                        <p class="text-justify"> هاست دات نت را می توان یکی از انواع هاست اشتراکی ویندوز در نظر گرفت که بهینه سازی انجام شده در آن با در نظر گرفتن المان های مهم در میزبانی سایت های نوشته شده بر اساس زبان برنامه نویسی دات نت مایکروسافت است </p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="tab-pane rtl fade" id="menu1">
+                <div class="p-3 bg-white my-3 rounded cust-shadow">
+                    <div class="d-flex justify-content-start align-items-end">
+                        <img src="Images/profile-list22-shape.png" class="cust-articleitem-img ml-3 rounded" />
+                        <h6 class="my-4 mx-2">   ارسال شده توسط <strong> حسین </strong></h6>
+                    </div>
+                    <div class="p-2">
+                        <p class="text-justify"> سلیا خت تیههش ایع اسنسنای ذسالنت تخعثهه تیدزذی یتاتانت ممتثتای یاتذیتاذتیاذ اییذاذث تابناسنتیاب شابثتاب بتشاسابث نصصتصهخقشت  هصقببنداهقثاص اهخصاه افصاا قفصااصاش ت یدبئدئب د </p>
+                    </div>
+                </div>
+                <div class="p-3 bg-white my-3 rounded cust-shadow">
+                    <div class="d-flex justify-content-start align-items-end">
+                        <img src="Images/profile-list22-shape.png" class="cust-articleitem-img ml-3 rounded" />
+                        <h6 class="my-4 mx-2">   ارسال شده توسط <strong> حسین </strong></h6>
+                    </div>
+                    <div class="p-2">
+                        <p class="text-justify"> سلیا خت تیههش ایع اسنسنای ذسالنت تخعثهه تیدزذی یتاتانت ممتثتای یاتذیتاذتیاذ اییذاذث تابناسنتیاب شابثتاب بتشاسابث نصصتصهخقشت  هصقببنداهقثاص اهخصاه افصاا قفصااصاش ت یدبئدئب د </p>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane rtl fade" id="menu2">
+                <div class="p-3 bg-white my-3 rounded cust-shadow">
+                    <div class="d-flex justify-content-start align-items-end">
+                        <img src="Images/profile-list22-shape.png" class="cust-articleitem-img ml-3 rounded" />
+                        <h6 class="my-4 mx-2">   ارسال شده توسط <strong> حسین </strong></h6>
+                    </div>
+                    <div class="p-2">
+                        <p class="text-justify"> سلیا خت تیههش ایع اسنسنای ذسالنت تخعثهه تیدزذی یتاتانت ممتثتای یاتذیتاذتیاذ اییذاذث تابناسنتیاب شابثتاب بتشاسابث نصصتصهخقشت  هصقببنداهقثاص اهخصاه افصاا قفصااصاش ت یدبئدئب د </p>
+                    </div>
+                </div>
+                <div class="p-3 bg-white my-3 rounded cust-shadow">
+                    <div class="d-flex justify-content-start align-items-end">
+                        <img src="Images/profile-list22-shape.png" class="cust-articleitem-img ml-3 rounded" />
+                        <h6 class="my-4 mx-2">   ارسال شده توسط <strong> حسین </strong></h6>
+                    </div>
+                    <div class="p-2">
+                        <p class="text-justify"> سلیا خت تیههش ایع اسنسنای ذسالنت تخعثهه تیدزذی یتاتانت ممتثتای یاتذیتاذتیاذ اییذاذث تابناسنتیاب شابثتاب بتشاسابث نصصتصهخقشت  هصقببنداهقثاص اهخصاه افصاا قفصااصاش ت یدبئدئب د </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+</div>
+

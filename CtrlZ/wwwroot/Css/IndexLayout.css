@@ -1,0 +1,162 @@
+body{
+    font-family: IRANSans;
+    position: relative;
+    text-align: right;
+}
+.rtl{
+    direction: rtl;
+}
+.bg-header{
+    background: linear-gradient(rgba(11, 37, 210, 0.875), rgba(121, 6, 153, 0.875));
+}
+.bg-footer{
+    background: linear-gradient(rgb(10, 8, 110),rgb(65, 97, 155));
+}
+.bg-accordion{
+    background: #718190;
+}
+.bg-article{
+    background: #f5f3f4;
+}
+.text-copy{
+    color: rgb(229, 211, 51);
+}
+.cust-transneg{
+    /* //transform: rotate(-1deg) scale(1.2); */
+    padding-top: 30px;
+    margin-bottom: 100px;
+
+}
+.cust-transpos{
+    /* //transform: rotate(1deg) scale(0.8); */
+}
+.logo{
+    height: 60px;
+    width: 150px;
+    text-align: center;
+    font-size: 40px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: white;
+    line-height: 60px;
+    font-weight: 700;
+    cursor: pointer;
+}
+.custom-tran{
+    font-size: 18px;
+    display: flex;
+    align-items:center;
+    transition: 0.3s;
+}
+.custom-nav{
+    border-radius: 10px;
+}
+a.custom-nav:hover {
+    box-shadow:4px 4px 10px rgba(38, 50, 135, 0.93),-4px -4px 10px rgba(78, 159, 219, 0.85);
+    border-radius: 10px;
+
+}
+.cust-w-img{
+    width: 350px;
+    height: 200px;
+}
+.cust-rel{
+    position: relative;
+    top: 25px;
+}
+
+
+
+.share-holder{
+    height:70%;
+    display: flex;
+}
+.share-holder .sotial{
+    width: 50%;
+    height: 100%;
+}
+.share-holder .index-links{
+    width: 50%;
+    height: 100%;
+}
+
+.sotial ul {
+    margin-top: 80px;
+    padding:0;
+    display:flex;
+}
+
+.sotial ul li {
+    list-style: none;
+}
+
+.sotial ul li a {
+    position: relative;
+    width:60px;
+    height:60px;
+    display:block;
+    text-align:center;
+    margin:0 10px;
+    border-radius: 50%;
+    padding: 6px;
+    box-sizing: border-box;
+    text-decoration:none;
+    box-shadow: 0 4px 15px rgba(122, 202, 255, 0.89);
+    background: linear-gradient(0deg, #ddd, #fff);
+    transition: .7s;
+}
+
+.sotial ul li a:hover {
+    box-shadow: 0 2px 5px rgba(122, 202, 255, 0.89);
+}
+.sotial ul li a > div {
+    width: 100%;
+    height:100%;
+    display:block;
+    border-radius: 50%;
+    background: linear-gradient(0deg, #fff, #ddd);
+}
+.sotial ul li a .fa {
+    width: 100%;
+    height:100%;
+    display:block;
+    background: linear-gradient(0deg, #fff, #ddd);
+    border-radius: 50%;
+    line-height: calc(60px - 12px);
+
+    color: #262626;
+    transition: .5s;
+}
+
+    .sotial ul li:nth-child(1) a .fa {
+        background: url("../Images/networks.png") no-repeat 50% 50%;
+        background-size: 50% 50%;
+    }
+
+    .sotial ul li:nth-child(2) a .fa {
+        background: url("../Images/logo.svg") no-repeat 50% 50%;
+        background-size: 50% 50%;
+    }
+
+    .sotial ul li:nth-child(3) a .fa {
+        background: url("../Images/social-media-logo.svg") no-repeat 50% 50%;
+        background-size: 50% 50%;
+    }
+
+    .sotial ul li:nth-child(4) a .fa {
+        background: url("../Images/social-media-logo\(1\).svg") no-repeat 50% 50%;
+        background-size: 50% 50%;
+    }
+
+    .sotial ul li:nth-child(5) a .fa {
+        background: url("../Images/logo.svg") no-repeat 50% 50%;
+        background-size: 50% 50%;
+    }
+
+.cust-edge{
+    clip-path: polygon(0 0,100% 0.5vw,100% 100%,0 calc(100% - 1.5vw));
+}
+.cust-shadow{
+    box-shadow: 0 0 3px 2px #c6c8ca;
+}
+
+

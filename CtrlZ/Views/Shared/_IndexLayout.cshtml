@@ -1,0 +1,229 @@
+﻿
+@{
+    bool islogin = User.Identity.IsAuthenticated;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CtrlZ</title>
+
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+
+
+    <link href="~/Css/bootstrap/bootstrap.css" rel="stylesheet" />
+    <link href="~/Css/IndexLayout.css" rel="stylesheet" />
+    <link href="~/Css/LandingPage.css" rel="stylesheet" />
+    <link href="~/Css/ResponsiveForFontSize.css" rel="stylesheet" />
+
+
+</head>
+<body>
+
+    <div class="jumbotron-fluid bg-header cust-transneg">
+        <div class="container cust-transpos">
+
+            <div class="row justify-content-between">
+                <div class="col-3 order-md-1 align-items-center">
+                    <a class="logo text-light"> Ctr+Z </a>
+                </div>
+                <div class="navbar-dark d-md-none d-flex justify-content-center align-items-center mr-4">
+                    <button class="navbar-toggler d-md-none" type="button" onclick="OpenNav()">
+                        <span class="navbar-toggler-icon"> </span>
+                    </button>
+                </div>
+
+                <div class="col-md-4 order-md-0 d-flex justify-content-center align-items-center my-md-0 my-3">
+                    <form class="d-flex align-items-center">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Search">
+                            <div class="input-group-append">
+                                <button class="btn btn-success" type="submit">Search</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <nav class="nav navbar-expand-md nav-hide" id="Navbar">
+                <div class="navbar-collapse  text-light justify-content-center mt-5 mb-5">
+                    <ul class="navbar-nav">
+                        @{
+                            if (islogin)
+                            {
+
+                                <li class="nav-item"> <a class="btn px-3 d-flex justify-content-end custom-nav active" href="/Account/LoginOut"> loginOut </a> </li>
+                                <li class="nav-item"> <a class="btn px-3 d-flex justify-content-end custom-nav" href="/Panel/Dashboard"> Panel </a> </li>
+                            }
+                            else
+                            {
+                                <li class="nav-item"> <a class="btn px-3 d-flex justify-content-end custom-nav active" href="/Account/Login"> login </a> </li>
+                            }
+                        }
+                        <li class="nav-item"> <a class="btn px-3 d-flex justify-content-end custom-nav" href="/Account/Register"> Register </a> </li>
+                        <li class="nav-item"> <a class="btn px-3 d-flex justify-content-end custom-nav"> About Us </a> </li>
+                        <li class="nav-item"> <a class="btn px-3 d-flex justify-content-end custom-nav"> BackEnd </a> </li>
+                        <li class="nav-item"> <a class="btn px-3 d-flex justify-content-end custom-nav" href="/"> Home </a> </li>
+                    </ul>
+                </div>
+            </nav>
+
+
+            <div class="row cust-rel d-flex align-items-center justify-content-center">
+                <div class="col-md-7 d-none d-md-inline text-center text-light ">
+                    <h5 class="mb-4"> جواب سوال های خود را بیابید </h5>
+                    <h6> با به اشتراک گذاشتن تربیات باعث پیشرفت خود و دیگران شوید </h6>
+                </div>
+                <div class="col-md-5 col-8 ">
+                    <img src="~/Images/header-shape-2.png" class="w-100 d-block d-md-none" />
+                    <img src="~/Images/x2.png" class="w-100 d-none d-md-block" />
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    @RenderBody()
+
+
+    <div class="jumbotron-fluid bg-footer">
+        <div class="container">
+            <div class="row rtl px-4 ">
+                <div class="share-holder">
+                    <div class="sotial">
+                        <ul>
+                            <li> <a href="#">  <div> <i class="fa "> </i></div>  </a>  </li>
+                            <li> <a href="#">  <div> <i class="fa "> </i></div>  </a>  </li>
+                            <li> <a href="#">  <div> <i class="fa "> </i></div>  </a>  </li>
+
+                        </ul>
+                    </div>
+                    <div class="index-links"></div>
+                </div>
+            </div>
+            <div>
+                <div class="py-5 px-4 text-copy"> <p>   تمامی محتویات این سایت متعلق به نویسنده سایت است و کپی مطالب فقط با ذکر منبع مجاز است &copy  </p>  </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <script src="~/Scripts/jquery-3.4.1.js"></script>
+    <script src="~/Scripts/bootstrap - Copy.min.js"></script>
+
+    <script>
+
+        let hval = 0;
+        let CountOfItems = 5;
+        InitialSlide(CountOfItems, 0);
+
+
+        function InitialSlide(CountOfItems, hval) {
+
+            let array = []; // ارایه ایتم های اسلاید بر اساس  right
+            let array2 = []; // ارایه مرتب کردن اسلاید بر اساس transform z
+            let h2 = hval;
+            let leftOfSlide = -(Math.floor((CountOfItems / 2) - hval) * 400); //right اولین ایتم
+
+            if (hval < 0) { // چک کردن منفی نبودن
+                h2 = -h2
+            }
+
+            for (let i = 0; i < CountOfItems; i++) { // پر کردن ارایه راست ها
+                array.push(leftOfSlide)
+                leftOfSlide = leftOfSlide + 400;
+
+            }
+
+            if (hval >= 1) { // چک کردن اینکه دکمه زده شده راست است یا ن
+
+                for (let k = 0; k < hval; k++) {    // فرمول بردن چپ ترین ایتم به راست خالی شده برای ایجاد حلقه
+                    array[CountOfItems - (h2)] = -(Math.floor((CountOfItems / 2)) * 400) + (400 * k)
+                    h2 -= 1;
+                }
+            }
+
+            if (hval < 0) {
+
+                for (let i = 0; i < -hval; i++) {// فرمول بردن چپ ترین ایتم به راست خالی شده برای ایجاد حلقه
+
+                    if (CountOfItems % 2 == 0) { // چک کردن زوج بودن یا نبودم تعداد ایتم ها
+                        array[i] = (Math.floor((CountOfItems / 2)) * 400 - 400) - ((h2 - 1) * 400);
+                    }
+                    else {
+                        array[i] = (Math.floor((CountOfItems / 2)) * 400) - ((h2 - 1) * 400);
+                    }
+
+                    h2 -= 1
+                }
+            }
+
+            for (let i = 0; i < CountOfItems; i++) { // پر کردن ارایه ترسفرم زد
+                if (array[i] < 0) {
+                    array2[i] = (array[i] + 100)
+                }
+                else {
+                    array2[i] = -(array[i] - 100)
+                }
+            }
+            console.log(array)
+
+            for (let i = 1; i <= CountOfItems; i++) {
+
+                $(".galery .gal > div:nth-child( " + i + ")").css({ right: array[i - 1] + "px" });
+                $(".galery .gal > div:nth-child( " + i + ")").css({ transform: "translateZ(" + (array2[i - 1]) + "px) scaleX(1.1)" });
+
+            }
+
+        }
+
+        function Right() {
+            if (hval > -CountOfItems) {
+                hval = hval;
+            }
+            else {
+                hval = 0;
+            }
+            hval -= 1;
+            InitialSlide(CountOfItems, hval);
+        }
+
+        function Left() {
+            if (hval < CountOfItems) {
+                hval = hval;
+            }
+            else {
+                hval = 0;
+            }
+            hval += 1;
+            InitialSlide(CountOfItems, hval);
+        }
+
+
+
+    </script>
+    <script>
+        navi = 0
+        function OpenNav() {
+            if (navi == 0) {
+                $("#Navbar").removeClass("nav-hide")
+                $("#Navbar").addClass("nav-show")
+                navi = 1
+            }
+            else {
+                $("#Navbar").removeClass("nav-show")
+                $("#Navbar").addClass("nav-hide")
+                navi = 0
+            }
+
+
+        }
+
+    </script>
+</body>
+
+
+</html>

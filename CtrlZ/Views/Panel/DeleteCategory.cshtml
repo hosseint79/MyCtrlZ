@@ -1,0 +1,9 @@
+﻿@model DataLayer.Entities.Category
+@{
+    ViewData["Title"] = "DeleteCategory";
+    Layout = "~/Views/Shared/_PanelLayout.cshtml";
+}
+
+<h2>@Model.Name</h2>
+
+<a href="/Panel/ConfirmDeleteCategory/@Model.CategoryId/">del</a> |

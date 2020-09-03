@@ -1,0 +1,34 @@
+﻿@model List<DataLayer.Entities.Category>
+
+@{
+    ViewData["Title"] = "ShowSubCategory";
+    Layout = "~/Views/Shared/_PanelLayout.cshtml";
+}
+<div class="col-md-8 col-12 p-0">
+    <div id="accordion">
+        <div>
+            <a class="btn btn-success" href="/panel/CreateCategory/@ViewBag.parentId"> create </a>
+        </div>
+
+        <div class="card">
+            @{
+                foreach (var item in Model)
+                {
+                    if (item.ParentId == ViewBag.parentId)
+                    {
+                        <div class="card-header">
+                            <a class="collapsed card-link" data-toggle="collapse" href="#collapseTwo">
+                                @item.Name
+                            </a>
+                            <a href="/Panel/UpdateCategory/@item.CategoryId"> Edit </a>
+                            <a href="/Panel/DeleteCategory/@item.CategoryId"> delete </a>
+                        </div>
+                    }
+
+                }
+            }
+
+        </div>
+
+    </div>
+    </div>
