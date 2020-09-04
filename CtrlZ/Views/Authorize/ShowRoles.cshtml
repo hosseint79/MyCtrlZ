@@ -7,7 +7,7 @@
 
 <div class="col-md-8 col-12 p-0">
     <div>
-        <a class="btn btn-success" href="/Authorize/CreateRole"> create </a>
+        <a class="btn btn-success" href="#" onclick="CreateClick()" data-toggle="modal" data-target="#myModal"> create </a>
     </div>
     <section class="table-holder">
         <table class="tabel-content">
@@ -29,19 +29,18 @@
 
             @foreach (var item in Model)
             {
-        <tr>
-            <td>
-                @item.RoleName
-            </td>
-            <td>
-                
-                <a href="/Authorize/UpdateRole/@item.RoleId "> Edit </a>
-                <a href="/Authorize/DeleteAticle/@item.RoleId " onclick="DeleteClick(@item.RoleId)" data-toggle="modal" data-target="#myModal"> delete </a>
-            </td>
-            <td>
-                <a href="/Authorize/ShowRolePermission/@item.RoleId "> permission </a>
-            </td>
-        </tr>
+                <tr>
+                    <td>
+                        @item.RoleName
+                    </td>
+                    <td>       
+                        <a href="#" onclick="UpdateClick(@item.RoleId)" data-toggle="modal" data-target="#myModal"> Edit </a>
+                        <a href="#" onclick="DeleteClick(@item.RoleId)" data-toggle="modal" data-target="#myModal"> delete </a>
+                    </td>
+                    <td>
+                        <a href="/Authorize/ShowRolePermission/@item.RoleId "> permission </a>
+                    </td>
+                </tr>
             }
 
         </table>
@@ -58,31 +57,38 @@
         <div class="modal-content">
 
             <!-- Modal Header -->
-            <div class="modal-header">
-                <h4 class="modal-title">Modal Heading</h4>
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <div class="p-2 border-bottom">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">&times;</button>
             </div>
 
             <!-- Modal body -->
-            <div class="modal-body">
+            <div class="modal-body py-4">
                 <div id="ModalBody">
 
                 </div>
             </div>
 
             <!-- Modal footer -->
-            <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-            </div>
 
         </div>
     </div>
 </div>
-
 @section ModalScript{
     <script>
         function DeleteClick(id) {
             $.get("/Authorize/DeleteRole/" + id, function (res) {
+                ModalBody.innerHTML = res
+
+            })
+        }
+        function CreateClick() {
+            $.get("/Authorize/CreateRole/", function (res) {
+                ModalBody.innerHTML = res
+
+            })
+        }
+        function UpdateClick(id) {
+            $.get("/Authorize/UpdateRole/" + id, function (res) {
                 ModalBody.innerHTML = res
 
             })

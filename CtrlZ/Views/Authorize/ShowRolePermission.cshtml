@@ -35,7 +35,6 @@
                     @item.Role.RoleName
                 </td>
                 <td>
-                    <a href="/Authorize/UpdateRole/@item.RolePermissionId "> Edit </a>
                     <a href="/Authorize/DeleteRolePermission/@item.RolePermissionId " onclick="DeleteClick(@item.RolePermissionId)" data-toggle="modal" data-target="#myModal"> delete </a>
                 </td>
             </tr>
@@ -47,35 +46,27 @@
 
 
 </div>
-<div id="MO">
-
-</div>
 <div class="modal fade" id="myModal">
     <div class="modal-dialog">
         <div class="modal-content">
 
             <!-- Modal Header -->
-            <div class="modal-header">
-                <h4 class="modal-title">Modal Heading</h4>
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <div class="p-2 border-bottom">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">&times;</button>
             </div>
 
             <!-- Modal body -->
-            <div class="modal-body">
+            <div class="modal-body py-4">
                 <div id="ModalBody">
 
                 </div>
             </div>
 
             <!-- Modal footer -->
-            <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-            </div>
 
         </div>
     </div>
 </div>
-
 @section ModalScript{
     <script>
         function DeleteClick(id) {

@@ -1,13 +1,16 @@
 ﻿@model DataLayer.RolePermission
 @{
     ViewData["Title"] = "DeleteRolePermission";
-    Layout = "~/Views/Shared/_PanelLayout.cshtml";
+    Layout = null;
 }
-
-<h1> ایا مطمین به حذف @Model.RoleId هستید</h1>
 
 <form asp-action="DeleteRolePermission">
     @Html.HiddenFor(m => m.RoleId)
     @Html.HiddenFor(m => m.RolePermissionId)
-    <button> delete</button>
+    <h4>
+        ایا مایل به حذف هستید؟
+    </h4>
+    <button class="btn btn-danger"> حذف</button>|
+    <a href="#" class="btn btn-success" data-dismiss="modal"> انصراف </a>
+
 </form>

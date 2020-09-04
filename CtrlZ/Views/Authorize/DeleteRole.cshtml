@@ -1,6 +1,12 @@
 ﻿@model DataLayer.Role
 
-<h1> ایا مطمین به حذف @Model.RoleName هستید</h1>
-<form>
-    <a href="/Authorize/ConfirmDeleteRole/@Model.RoleId"> delete </a>
-</form>
+<div>
+
+    <h4>
+        ایا مایل به حذف نفش @Model.RoleName هستید؟
+    </h4>
+
+    <a href="/Authorize/ConfirmDeleteRole/@Model.RoleId/" class="btn btn-danger">حذف</a> |
+    <a href="#" class="btn btn-success" data-dismiss="modal"> انصراف </a>
+
+</div>
