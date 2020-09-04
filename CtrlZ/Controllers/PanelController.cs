@@ -130,7 +130,14 @@ namespace CtrlZ.Controllers
                     ParentId = id
                 };
                 _admin.InsertCategory(category);
-                return RedirectToAction("ShowCategory");
+                if (id == null)
+                {
+                    return RedirectToAction("ShowCategory");
+                }
+                else
+                {
+                    return Redirect("/Panel/ShowSubCategory/" + id);
+                }
             }
             return View(viewmodel);
         }

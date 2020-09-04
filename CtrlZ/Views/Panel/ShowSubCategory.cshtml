@@ -7,21 +7,23 @@
 <div class="col-md-8 col-12 p-0">
     <div id="accordion">
         <div>
-            <a class="btn btn-success" href="/panel/CreateCategory/@ViewBag.parentId"> create </a>
+            <a class="btn btn-success" href="#" onclick="CreateClick(@ViewBag.parentId)" data-toggle="modal" data-target="#myModal"> create </a>
         </div>
 
-        <div class="card">
+        <div class="card border-0">
             @{
                 foreach (var item in Model)
                 {
                     if (item.ParentId == ViewBag.parentId)
                     {
-                        <div class="card-header">
-                            <a class="collapsed card-link" data-toggle="collapse" href="#collapseTwo">
+                        <div class="card-header my-1 d-flex justify-content-between rounded">
+                            <div>
+                                <a href="#" onclick="UpdateClick(@item.CategoryId)" data-toggle="modal" data-target="#myModal" class="btn btn-success"> Edit </a>
+                                <a href="#" onclick="DeleteClick(@item.CategoryId)" data-toggle="modal" data-target="#myModal" class="btn btn-danger">delete </a>
+                            </div>
+                            <a class="btn">
                                 @item.Name
                             </a>
-                            <a href="/Panel/UpdateCategory/@item.CategoryId"> Edit </a>
-                            <a href="/Panel/DeleteCategory/@item.CategoryId"> delete </a>
                         </div>
                     }
 
@@ -31,4 +33,47 @@
         </div>
 
     </div>
+</div>
+<div class="modal fade" id="myModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="p-2 border-bottom">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body py-4">
+                <div id="ModalBody">
+
+                </div>
+            </div>
+
+            <!-- Modal footer -->
+
+        </div>
     </div>
+</div>
+@section ModalScript{
+    <script>
+        function DeleteClick(id) {
+            $.get("/Panel/DeleteCategory/" + id, function (res) {
+                ModalBody.innerHTML = res
+
+            })
+        }
+        function CreateClick(id) {
+            $.get("/panel/CreateCategory/" + id, function (res) {
+                ModalBody.innerHTML = res
+
+            })
+        }
+        function UpdateClick(id) {
+            $.get("/panel/UpdateCategory/" + id, function (res) {
+                ModalBody.innerHTML = res
+
+            })
+        }
+    </script>
+}
