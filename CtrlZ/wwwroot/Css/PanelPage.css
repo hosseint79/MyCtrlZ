@@ -152,22 +152,23 @@ body {
 
 
 .tabel-content {
-    width: 100%;
     border-radius: 10px;
-    overflow: hidden;
+    width:100%;
     box-shadow: 5px 5px 10px 1px rgb(207, 207, 207);
 }
 
-tr:nth-child(even) {
+.tabel-content tr{
+    padding:10px 14px;
+}
+
+.tabel-content tr:nth-child(even) {
     background-color: rgb(233, 233, 233);
 }
 
 .tabel-content td {
     text-align: center;
-    padding: 12px;
-    text-overflow: ellipsis;
-    vertical-align: bottom;
 }
+
 
     .tabel-content td > img {
         height: 50px;
@@ -176,9 +177,11 @@ tr:nth-child(even) {
     }
 
     .tabel-content td > a {
-        padding: 8px;
+        display:block;
+        padding: 5px;
         background: rgba(29, 220, 87, 0.70);
         border-radius: 5px;
+        margin:1px 0;
         color: #3d3d3d;
     }
 
@@ -189,7 +192,6 @@ tr:nth-child(even) {
     padding: 12px;
     font-weight:500;
 }
-
 
 .article-table {
     margin: 8px 0;
@@ -202,6 +204,7 @@ tr:nth-child(even) {
     .article-table:nth-child(odd) {
         background-color: rgb(246, 246, 246);
     }
+
 .article-table  .article-table-item {
     margin: 4px 0;
     padding: 5px;

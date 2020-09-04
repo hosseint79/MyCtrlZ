@@ -11,59 +11,63 @@
         </div>
         <section class="table-holder">
             <table class="tabel-content d-none d-md-block">
-
-                <tr class="rtl">
-                    <th>
-                        عملیات
-                    </th>
-                    <th>
-                        نمایش در اسلاید
-                    </th>
-                    <th>
-                        تاریخ ساخت
-                    </th>
-                    <th>
-                        توضیحات
-                    </th>
-
-                    <th>
-                        عنوان
-                    </th>
-                    <th>
-                        عکس
-                    </th>
-                </tr>
-
-
-                @foreach (var item in Model)
-                {
+                
                     <tr>
-                        <td>
-                            <a href="/Panel/EditArticle/@item.ArticleId "> Edit </a>
-                            <a href="/Panel/DeleteAticle/@item.ArticleId " onclick="DeleteClick(@item.ArticleId)" data-toggle="modal" data-target="#myModal"> delete </a>
-                        </td>
-                        <td>
-                            @item.ShowSlide
-                        </td>
-                        <td>
-                            @item.CreateDate
-                        </td>
-                        <td>
-                            @item.Describtion jhfsdbfhjdb hdbfjhsdfbhsd hdbfhbsd
-                        </td>
-                        <td>
-                            @item.Title
-                        </td>
-                        <td>
-                            @item.ArticlePicture
-                        </td>
-                    </tr>
-                }
+                        <th>
+                            عملیات
+                        </th>
+                        <th>
+                            نمایش در اسلاید
+                        </th>
+                        <th>
+                            تاریخ ساخت
+                        </th>
+                        <th>
+                            توضیحات
+                        </th>
 
+                        <th>
+                            عنوان
+                        </th>
+                        <th>
+                            عکس
+                        </th>
+                    </tr>
+
+                
+                
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                <a href="/Panel/EditArticle/@item.ArticleId "> Edit </a>
+                                <a href="/Panel/DeleteAticle/@item.ArticleId " onclick="DeleteClick(@item.ArticleId)" data-toggle="modal" data-target="#myModal"> delete </a>
+                            </td>
+                            <td>
+                                @item.ShowSlide
+                            </td>
+                            <td>
+                                @item.CreateDate 
+                            </td>
+                            <td >
+                                @item.Describtion
+                            </td>
+                            <td>
+                                @item.Title
+                            </td>
+                            <td>
+                                @item.ArticlePicture
+                            </td>
+                        </tr>
+                    }
+
+                
+
+   
             </table>
 
         </section>
-        <div class="d-block d-md-none">
+        <div class="d-block d-md-none bg-success">
             @foreach (var item in Model)
             {
                 <div class="article-table">
@@ -135,22 +139,18 @@
         <div class="modal-content">
 
             <!-- Modal Header -->
-            <div class="modal-header">
-                <h4 class="modal-title">Modal Heading</h4>
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <div class="p-2 border-bottom">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">&times;</button>
             </div>
 
             <!-- Modal body -->
-            <div class="modal-body">
+            <div class="modal-body py-4">
                 <div id="ModalBody">
 
                 </div>
             </div>
 
             <!-- Modal footer -->
-            <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-            </div>
 
         </div>
     </div>
@@ -164,5 +164,7 @@
 
             })
         }
+
+
     </script>
 }

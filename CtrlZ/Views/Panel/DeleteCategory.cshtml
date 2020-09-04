@@ -1,9 +1,16 @@
 ﻿@model DataLayer.Entities.Category
 @{
     ViewData["Title"] = "DeleteCategory";
-    Layout = "~/Views/Shared/_PanelLayout.cshtml";
+    Layout = null;
 }
 
-<h2>@Model.Name</h2>
+<div>
 
-<a href="/Panel/ConfirmDeleteCategory/@Model.CategoryId/">del</a> |
+    <h4 class="py-2">
+        ایا مایل به حذف مقاله @Model.Name هستید؟
+    </h4>
+
+    <a href="/Panel/ConfirmDeleteCategory/@Model.CategoryId/" class="btn btn-danger">حذف</a> |
+    <a href="#" class="btn btn-success" data-dismiss="modal"> انصراف </a>
+
+</div>
