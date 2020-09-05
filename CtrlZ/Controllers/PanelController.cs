@@ -5,6 +5,7 @@ using System;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using System.IO;
 namespace CtrlZ.Controllers
 {
     public class PanelController : Controller
@@ -30,12 +31,13 @@ namespace CtrlZ.Controllers
         }
 
         [HttpPost]
-        public IActionResult CreateArticle(ArticleViewModel viewmodel)
+        public IActionResult CreateArticle(ArticleViewModel viewmodel )
         {
 
 
             if (ModelState.IsValid)
             {
+
                 Article article = new Article()
                 {
                     Text = viewmodel.Text,

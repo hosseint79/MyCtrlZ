@@ -21,6 +21,14 @@ body{
 .text-copy{
     color: rgb(229, 211, 51);
 }
+.login-height {
+    height: 550px;
+}
+
+.login-pic {
+    background: url("../Images/Login-rafiki.png") no-repeat 50% 50%;
+    background-size: 100% 100%;
+}
 .cust-transneg{
     /* //transform: rotate(-1deg) scale(1.2); */
     padding-top: 30px;

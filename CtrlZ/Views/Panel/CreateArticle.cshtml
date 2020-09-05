@@ -11,14 +11,13 @@
             <div class="form-header mb-4"> اضافه کردن اسلاید </div>
             <div class="p-3">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                <div class="input-group mb-3">
+                <div class="input-group">
                     <input asp-for="Title" class="form-control" />
                     <div class="input-group-append">
                         <label asp-for="Title" class="input-group-text"></label>
                     </div>
-
                 </div>
-                <span asp-validation-for="Title" class="text-danger mb-2">عنوان را وارد کنید </span>
+                <span asp-validation-for="Title" class="d-block vali alert-danger mb-3"> </span>
                 <div class="input-group mb-3">
                     <input asp-for="Describtion" class="form-control" />
 

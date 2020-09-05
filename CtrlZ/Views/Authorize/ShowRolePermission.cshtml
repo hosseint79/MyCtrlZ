@@ -28,18 +28,18 @@
 
             @foreach (var item in Model)
             {
-            <tr>
-                <td>
-                    <a href="/Authorize/DeleteRolePermission/@item.RolePermissionId " class="btn btn-danger" onclick="DeleteClick(@item.RolePermissionId)" data-toggle="modal" data-target="#myModal"> delete </a>
-                </td>
-                <td>
-                    @item.Permission.PermissionName
-                </td>
-                <td>
-                    @item.Role.RoleName
-                </td>
+                <tr>
+                    <td>
+                        <a href="/Authorize/DeleteRolePermission/@item.RolePermissionId " class="btn btn-danger" onclick="DeleteClick(@item.RolePermissionId)" data-toggle="modal" data-target="#myModal"> delete </a>
+                    </td>
+                    <td>
+                        @item.Permission.PermissionName
+                    </td>
+                    <td>
+                        @item.Role.RoleName
+                    </td>
 
-            </tr>
+                </tr>
             }
 
         </table>
