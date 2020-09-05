@@ -168,6 +168,7 @@ body {
 
 .tabel-content td {
     text-align: center;
+    padding:5px;
 }
 
 
@@ -179,11 +180,8 @@ body {
 
     .tabel-content td > a {
         display:block;
-        padding: 5px;
-        background: rgba(29, 220, 87, 0.70);
-        border-radius: 5px;
         margin:2px;
-        color: #3d3d3d;
+
     }
 
     .tabel-content th {

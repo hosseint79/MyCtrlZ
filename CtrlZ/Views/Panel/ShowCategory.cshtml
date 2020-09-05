@@ -12,26 +12,32 @@
         <table class="tabel-content">
 
             <tr>
-                <th>                   
-                    نام
-                </th>
                 <th>
                     عملیات
                 </th>
+                <th>
+                    زیر دسته
+                </th>
+                <th>
+                    نام
+                </th>
+
             </tr>
 
 
             @foreach (var item in Model)
             {
                 <tr>
+              
+                    <td class="justify-content-center d-flex">
+                            <a href="#" onclick="UpdateClick(@item.CategoryId)" data-toggle="modal" data-target="#myModal" class="btn btn-success"> Edit </a>
+                            <a href="#" onclick="DeleteClick(@item.CategoryId)" data-toggle="modal" data-target="#myModal" class="btn btn-danger"> حذف </a>
+                    </td>
+                    <td>
+                        <a href="/Panel/ShowSubCategory/@item.CategoryId" class="btn btn-success"> زیر دسته  </a>
+                    </td>
                     <td>
                         @item.Name
-                    </td>
-
-                    <td>
-                        <a href="/Panel/ShowSubCategory/@item.CategoryId"> زیر دسته  </a>
-                        <a href="#" onclick="UpdateClick(@item.CategoryId)" data-toggle="modal" data-target="#myModal"> Edit </a>
-                        <a href="#" onclick="DeleteClick(@item.CategoryId)" data-toggle="modal" data-target="#myModal"> حذف </a>
                     </td>
                 </tr>
             }
