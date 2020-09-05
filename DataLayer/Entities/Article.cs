@@ -28,7 +28,6 @@ namespace DataLayer.Entities
         [Display(Name ="نمایش اسلاید")]
         public bool ShowSlide { get; set; }
         [Display(Name ="زمان ثبت")]
-        [MaxLength(15,ErrorMessage ="مقدار {0} نباید بیشتر از {1} باشد ")]
         public int CreateDate { get; set; }
         [Display(Name ="تعداد نمایش")]
         public int visit { get; set; }

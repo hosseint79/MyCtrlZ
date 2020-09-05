@@ -1,8 +1,10 @@
 ﻿using System.Collections.Generic;
 using Core;
 using DataLayer.Entities;
+using System;
+using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-
 namespace CtrlZ.Controllers
 {
     public class PanelController : Controller
@@ -31,6 +33,7 @@ namespace CtrlZ.Controllers
         public IActionResult CreateArticle(ArticleViewModel viewmodel)
         {
 
+
             if (ModelState.IsValid)
             {
                 Article article = new Article()
@@ -51,7 +54,7 @@ namespace CtrlZ.Controllers
             }
             else
             {
-
+                ModelState.AddModelError("nn", "ModelOnly");
             }
 
             return View(viewmodel);
@@ -88,6 +91,17 @@ namespace CtrlZ.Controllers
                 return NotFound();
             }
             var article = _admin.GetArticle(id.Value);
+            //var newarticle = new ArticleViewModel()
+            //{
+            //    ArticlePicture = article.ArticlePicture,
+            //    visit = article.visit,
+            //    CreateDate = article.CreateDate,
+            //    Describtion = article.Describtion,
+            //    ShowSlide = article.ShowSlide,
+            //    Text = article.Text,
+            //    Title = article.Title
+
+            //};
             if (article == null)
             {
                 return NotFound();
@@ -99,9 +113,14 @@ namespace CtrlZ.Controllers
         {
             if (ModelState.IsValid)
             {
+                //Article article = new Article()
+                //{
+                    
+                //}
                 _admin.UpdateArticle(article.ArticleId, article);
+                return RedirectToAction("ShowArticles");
             }
-            return View();
+            return View(article);
         }
         public IActionResult ShowCategory()
         {
