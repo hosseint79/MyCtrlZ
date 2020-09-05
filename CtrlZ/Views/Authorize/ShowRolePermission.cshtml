@@ -14,14 +14,15 @@
 
             <tr>
                 <th>
+                    عملیات
+                </th>
+                <th>
                     سطح دسترسی
                 </th>
                 <th>
                     نقش
                 </th>
-                <th>
-                    عملیات
-                </th>
+
             </tr>
 
 
@@ -29,14 +30,15 @@
             {
             <tr>
                 <td>
+                    <a href="/Authorize/DeleteRolePermission/@item.RolePermissionId " class="btn btn-danger" onclick="DeleteClick(@item.RolePermissionId)" data-toggle="modal" data-target="#myModal"> delete </a>
+                </td>
+                <td>
                     @item.Permission.PermissionName
                 </td>
                 <td>
                     @item.Role.RoleName
                 </td>
-                <td>
-                    <a href="/Authorize/DeleteRolePermission/@item.RolePermissionId " onclick="DeleteClick(@item.RolePermissionId)" data-toggle="modal" data-target="#myModal"> delete </a>
-                </td>
+
             </tr>
             }
 

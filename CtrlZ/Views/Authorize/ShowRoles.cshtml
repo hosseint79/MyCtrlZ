@@ -15,32 +15,34 @@
             <tr>
 
                 <th>
-                    عکس
-                </th>
-
-                <th>
                     عملیات
                 </th>
                 <th>
                     سطح دسترسی
                 </th>
+
+                <th>
+                    نام
+                </th>
+
             </tr>
 
 
             @foreach (var item in Model)
             {
-                <tr>
-                    <td>
-                        @item.RoleName
-                    </td>
-                    <td>       
-                        <a href="#" onclick="UpdateClick(@item.RoleId)" data-toggle="modal" data-target="#myModal"> Edit </a>
-                        <a href="#" onclick="DeleteClick(@item.RoleId)" data-toggle="modal" data-target="#myModal"> delete </a>
-                    </td>
-                    <td>
-                        <a href="/Authorize/ShowRolePermission/@item.RoleId "> permission </a>
-                    </td>
-                </tr>
+        <tr>
+            <td class="d-flex justify-content-center">
+                <a href="#" onclick="UpdateClick(@item.RoleId)" data-toggle="modal" data-target="#myModal" class="btn btn-success"> Edit </a>
+                <a href="#" onclick="DeleteClick(@item.RoleId)" data-toggle="modal" data-target="#myModal" class="btn btn-danger"> delete </a>
+            </td>
+
+            <td>
+                <a href="/Authorize/ShowRolePermission/@item.RoleId " class="btn btn-success"> permission </a>
+            </td>
+            <td>
+                @item.RoleName
+            </td>
+        </tr>
             }
 
         </table>
