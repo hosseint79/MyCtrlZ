@@ -168,10 +168,12 @@ a.custom-nav:hover {
 .login-height {
     height: 550px;
 }
-.login-form{
-    position:relative;
-    top:-13%;
-    height:113%;
+.login-form {
+    position: relative;
+    top: -13%;
+    height: 113%;
+
+
 }
 .bg-loginform {
     background: #31243f;
